@@ -1,13 +1,14 @@
 /*
  * NOTE:If you use the new SIM808 please modify Gps.h definition,
- *         //#define  GPS_GNSS    //If you use the chip is the new SIM808 of the open definition
- *      	and uncomment  of lines from 68 to 73 and comment of lines from 78 to 88.
- *			If If you use the  old SIM808 or SIM908 please modify Gps.h definition,
- *					//#define  GPS_OLD   //If you use the chip is theold SIM808 or SIM908 of the open definition
- *				and uncomment of lines from 78 to 88 and comment  of lines from 68 to 73
+ *  //#define  GPS_GNSS    //If you use the chip is the new SIM808 of the open definition
+ *   and uncomment  of lines from 68 to 73 and comment of lines from 78 to 88.
+ *If If you use the  old SIM808 or SIM908 please modify Gps.h definition,
+ *	//#define  GPS_OLD   //If you use the chip is theold SIM808 or SIM908 of the open definition
+ *	 and uncomment of lines from 78 to 88 and comment  of lines from 68 to 73
  */			
 
 //To change pins for Software Serial, use the two lines in GSM.cpp.
+///If you use Maga to remember,uncomment Frist lines in HWSerial.h "#define MEGA"
 
 //GSM Shield for Arduino
 //www.open-electronics.org
