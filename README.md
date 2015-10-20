@@ -2,6 +2,7 @@ GSM/GPRS & GPS Shield Library for modules using SIM900/SIM908
 ======
 NOTE: This repo has been migrated from google code repo: http://code.google.com/p/gsm-shield-arduino/
 
+NOTE2: Modified to adapt to the new SIM808,because it modifies the AT command.
 
 For informations and support:
 - http://www.gsmlib.org/

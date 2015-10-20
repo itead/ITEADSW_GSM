@@ -55,7 +55,7 @@ void setup()
                Serial.println("status=GPSREADY");
           else Serial.println("status=ERROR");
 
-          delay(20000);	//Time for fixing
+          delay(30000);	//Time for fixing
 
           //If you use the new SIM808 please use the following code
 
