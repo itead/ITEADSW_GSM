@@ -5,6 +5,11 @@
 //#include "call.h"
 #include "gps.h"
 
+/*
+ * NOTE:If you use the new SIM808 please modify Gps.h definition,
+ *      and modify the below  about of "gps.getStat()".
+ */
+
 //To change pins for Software Serial, use the two lines in GSM.cpp.
 
 //GSM Shield for Arduino
@@ -26,7 +31,7 @@ char vel[15];
 char msg1[5];
 char msg2[5];
 
-char stat;
+int stat;
 char inSerial[20];
 int i=0;
 boolean started=false;
@@ -51,6 +56,19 @@ void setup()
           else Serial.println("status=ERROR");
 
           delay(20000);	//Time for fixing
+
+          //If you use the new SIM808 please use the following code
+
+          stat = gps.getStat();
+          Serial.println(stat);
+          if(stat == 0)
+              Serial.println("FIXED FAIL");
+          else if(stat == 1)
+               Serial.println("FIXED OK");
+          
+
+         //If you use the old SIM808 or SIM908 please use the following code
+         /*
           stat=gps.getStat();
           if(stat==1)
                Serial.println("NOT FIXED");
@@ -60,7 +78,9 @@ void setup()
                Serial.println("2D FIXED");
           else if(stat==3)
                Serial.println("3D FIXED");
+         
           delay(5000);
+          */
           //Get data from GPS
           gps.getPar(lon,lat,alt,time,vel);
           Serial.println(lon);
@@ -106,7 +126,8 @@ void serialhwread()
 //      Serial.println("BATTERY TEST 2");
 //      gps.getBattTVol(msg1);
 //      Serial.println(msg1);
-               stat=gps.getStat();
+          /* 
+           stat=gps.getStat();
                if(stat==1)
                     Serial.println("NOT FIXED");
                else if(stat==0)
@@ -115,6 +136,7 @@ void serialhwread()
                     Serial.println("2D FIXED");
                else if(stat==3)
                     Serial.println("3D FIXED");
+           */         
           }
           //Read last message saved.
           if(!strcmp(inSerial,"MSG")) {
