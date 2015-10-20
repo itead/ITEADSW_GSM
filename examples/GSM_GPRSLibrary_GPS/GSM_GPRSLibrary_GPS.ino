@@ -1,14 +1,11 @@
-#include "SIM900.h"
-#include <SoftwareSerial.h>
-//#include "inetGSM.h"
-//#include "sms.h"
-//#include "call.h"
-#include "gps.h"
-
 /*
  * NOTE:If you use the new SIM808 please modify Gps.h definition,
- *      and modify the below  about of "gps.getStat()".
- */
+ *         //#define  GPS_GNSS    //If you use the chip is the new SIM808 of the open definition
+ *      	and uncomment  of lines from 68 to 73 and comment of lines from 78 to 88.
+ *			If If you use the  old SIM808 or SIM908 please modify Gps.h definition,
+ *					//#define  GPS_OLD   //If you use the chip is theold SIM808 or SIM908 of the open definition
+ *				and uncomment of lines from 78 to 88 and comment  of lines from 68 to 73
+ */			
 
 //To change pins for Software Serial, use the two lines in GSM.cpp.
 
@@ -17,6 +14,15 @@
 //this code is based on the example of Arduino Labs.
 
 //Simple sketch to start a connection as client.
+
+#include "SIM900.h"
+#include <SoftwareSerial.h>
+//#include "inetGSM.h"
+//#include "sms.h"
+//#include "call.h"
+#include "gps.h"
+
+
 
 //InetGSM inet;
 //CallGSM call;
